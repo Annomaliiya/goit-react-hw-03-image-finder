@@ -1,4 +1,7 @@
 .btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
   padding: 8px 16px;
   border-radius: 6px;
   background-color: #3fb545;

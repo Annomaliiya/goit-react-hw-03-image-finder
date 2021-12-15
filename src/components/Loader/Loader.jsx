@@ -1,14 +1,17 @@
 import ALoader from "react-loader-spinner";
-const Loader =({}) =>{
+
+import s from "./Loader.module.css"
+const Loader =() =>{
 
 
-    return (
-            <ALoader
+    return (<div className={s.loader}>
+            <ALoader 
             type="ThreeDots"
             color="#1b6e10"
             height={80}
             width={80}
-        timeout={3000}/>
+        />
+        </div>
         );
     }
 export default Loader;

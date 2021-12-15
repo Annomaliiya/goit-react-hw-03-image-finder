@@ -1,31 +1,26 @@
-import axios from "axios";
 import { Component } from 'react';
-import Button from './components/Button';
-import Loader from "./components/Loader";
 
 import './App.css';
+import SearchBar from './components/SearchBar';
+import ImageGallery from './components/ImageGallery';
 
 
 
 class App extends Component {
   state = {
-    isLoading: true
+    query: ""
   }
-  BASE_URL = "https://pixabay.com/api/";
-  API_KEY = "24480892-2cf9ff0ac9dbac3af2a958edd";
-
-  componentDidMount() {
-
+  changeQuery = ({ query }) => {
+    this.setState({ query })
   }
-
 
 
   render() {
-    const { isLoading } = this.state;
+
     return (
       <div className="App">
-        {isLoading && <Loader loading={this.state.isLoading} />}
-        <Button title="Load more" />
+        <SearchBar onSubmit={this.changeQuery} />
+        <ImageGallery queryProp={this.state.query} />
       </div>
     );
   }
