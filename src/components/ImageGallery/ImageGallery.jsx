@@ -50,7 +50,7 @@ class ImageGallery extends Component {
                     
                     newState.finish = true;
                 }
-                if (data.hits.length === 0) {
+                if (!data.hits.length) {
                     newState.error = true;
                 }
                 return newState
